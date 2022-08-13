@@ -1,9 +1,12 @@
-import React from 'react';
-import './App.style.scss';
+import React from "react";
+import Content from "../Content";
+import "./App.style.scss";
 
 function App() {
   return (
-    <div>Hello</div>
+    <main className="background App">
+      <Content />
+    </main>
   );
 }
 
