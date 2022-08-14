@@ -1,16 +1,20 @@
 import React, { ReactElement, useEffect, useState } from "react";
+// style
+import "./Clock.style.scss";
 
 function Clock(): ReactElement | null {
-  const [time, setTime] = useState<number>(0);
+  const [time, setTime] = useState<Date>(new Date());
 
   useEffect(() => {
-    const intervalID = setInterval(() => { setTime((prev) => prev + 1); }, 1000);
+    const intervalID = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
     return () => {
       clearInterval(intervalID);
     };
   }, []);
 
-  return <div>{time}</div>;
+  return <div className="Clock">{`${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`}</div>;
 }
 
 export default Clock;

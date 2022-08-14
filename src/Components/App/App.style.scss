@@ -1,5 +1,5 @@
 .background {
-    background-image: url("../../Assets/img/app-background.jpg");
+    background-image: url("../../../public/Assets/img/app-background-dark.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -18,7 +18,7 @@
         top: 0;
         width: 100%;
         height: 100%;
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(25px);
         z-index: 1;
     }
     

@@ -1,6 +1,8 @@
 import React, { ReactElement, useState } from "react";
 import PropTypes from "prop-types";
 import { SubmitedValues } from "../../../Utils/Types";
+// styles
+import "./WeatherForm.style.scss";
 
 type Props = {
   fetchData: (filters: SubmitedValues) => Promise<void>
@@ -12,15 +14,17 @@ function WeatherForm({ fetchData }: Props): ReactElement | null {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setCity(event.target.value);
   };
-  const handleSubmit = (event: React.FormEvent<HTMLInputElement>): void => {
+  const handleSubmit = (event: React.SyntheticEvent): void => {
     event.preventDefault();
     fetchData({ cityName: city });
   };
 
   return (
-    <form>
-      <input type="text" value={city} onChange={handleInputChange} />
-      <input type="submit" onClick={handleSubmit} />
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={city} onChange={handleInputChange} placeholder="London..." />
+      <button type="submit" disabled={city.length === 0}>
+        <img src="../../../../Assets/svg/arrow-right-solid.svg" alt="submit icon" />
+      </button>
     </form>
   );
 }

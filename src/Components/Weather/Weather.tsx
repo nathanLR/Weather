@@ -9,7 +9,8 @@ import { SubmitedValues } from "../../Utils/Types";
 import fetchData from "../../Utils/Api";
 
 function Weather(): ReactElement | null {
-  const [currentWeather, setCurrentWeather] = useState<Record<string, unknown> | null>(null);
+  // const [currentWeather, setCurrentWeather] = useState<Record<string, unknown | number | string> | null>(null);
+  const [currentWeather, setCurrentWeather] = useState(null);
 
   const fetchWeatherData = async (filters: SubmitedValues): Promise<void> => {
     const weatherData = await fetchData(filters, "current");

@@ -1,0 +1,40 @@
+form{
+    align-self: center;
+    input{
+        background-color: transparent;
+        border: none;
+        padding: 15px;
+        &:focus{
+            outline: none;
+            border: none;
+        }
+        font-size: 1.5rem;
+    }
+    input[type=text]{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        padding-left: 0;
+        &::placeholder{
+            font-family: "Poppins extra-light", sans-serif;
+            color: rgba(255, 255, 255, 0.507);
+            font-style: italic;
+        }
+    }
+    button[type=submit]{
+        transition: opacity 0.2s ease;
+        padding: 15px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 0.5px solid white;
+        height: 100%;
+        border-radius: 50%;
+        &:disabled{
+            opacity: 0.2;
+        }
+        img{
+            height: 100%;
+            width: auto;
+        }
+    }
+
+
+}

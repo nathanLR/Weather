@@ -1,0 +1,43 @@
+.WeatherData{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 50px;
+    .cityName{
+        text-align: center;
+        font-size: 3rem;
+        span{
+            margin: 0 50px;
+            position: relative;
+            &:first-of-type::after{
+                content: '';
+                height: 100%;
+                position: absolute;
+                right: -50px;
+                top: 0;
+                width: 1px;
+                background-color: rgba(255,255,255,0.25);
+            }
+        }
+    }
+    .logo{
+        
+        max-width: 250px;
+        margin: 50px auto 0 auto;
+    }
+    .description{
+        text-align: center;
+        margin-top: 50px;
+        font-size: 1.5rem;
+        font-family: "Poppins extra-light", sans-serif;
+    }
+    .temperature{
+        text-align: center;
+        margin-top: 25px;
+        font-size: 1.5rem;
+        font-family: "Poppins extra-light", sans-serif;
+    }
+    .owl-carousel{
+        margin-top: auto;
+    }
+}
