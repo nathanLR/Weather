@@ -13,8 +13,11 @@ const displayDate = (data: string): string => {
      - ${time.split(":")[0]}H
   `;
 };
+type Props = {
+  data: any // eslint-disable-line @typescript-eslint/no-explicit-any
+};
 
-function ForecastItem({ data }: { data: any }): ReactElement | null {
+function ForecastItem({ data }: Props): ReactElement | null {
   return (
     <div className="forecastElement" key={data.dt}>
       <p>{displayDate(data.dt_txt)}</p>

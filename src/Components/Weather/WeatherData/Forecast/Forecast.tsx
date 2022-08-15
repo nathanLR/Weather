@@ -1,4 +1,6 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, {
+  Key, ReactElement, useEffect, useState,
+} from "react";
 import OwlCarousel from "react-owl-carousel";
 // styles
 import "owl.carousel/dist/assets/owl.carousel.css"; // eslint-disable-line import/no-extraneous-dependencies
@@ -13,7 +15,7 @@ type Props = {
 };
 
 function Forecast({ cityName }: Props): ReactElement | null {
-  const [forecast, setForcast] = useState<Array<any> | null>(null);
+  const [forecast, setForcast] = useState<Array<Record<string, unknown | string | number>> | null>(null);
 
   useEffect(() => {
     const fetchForecastData = async () => {
@@ -29,7 +31,7 @@ function Forecast({ cityName }: Props): ReactElement | null {
 
   return (
     <OwlCarousel margin={10} items={4}>
-      {forecast.map((hourly) => <ForecastItem data={hourly} key={hourly.dt} />)}
+      {forecast.map((hourly) => <ForecastItem data={hourly} key={hourly.dt as Key} />)}
     </OwlCarousel>
   );
 }
