@@ -10,7 +10,6 @@
 
 # production
 /build
-/src/Assets/svg
 
 # misc
 .DS_Store
