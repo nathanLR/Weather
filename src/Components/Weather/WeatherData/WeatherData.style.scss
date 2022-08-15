@@ -6,19 +6,6 @@
     .cityName{
         text-align: center;
         font-size: 3rem;
-        span{
-            margin: 0 50px;
-            position: relative;
-            &:first-of-type::after{
-                content: '';
-                height: 100%;
-                position: absolute;
-                right: -50px;
-                top: 0;
-                width: 1px;
-                background-color: rgba(255,255,255,0.25);
-            }
-        }
     }
     .logo{
         

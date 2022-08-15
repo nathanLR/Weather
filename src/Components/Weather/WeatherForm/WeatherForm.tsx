@@ -23,7 +23,7 @@ function WeatherForm({ fetchData }: Props): ReactElement | null {
     <form onSubmit={handleSubmit}>
       <input type="text" value={city} onChange={handleInputChange} placeholder="London..." />
       <button type="submit" disabled={city.length === 0}>
-        <img src="../../../../Assets/svg/arrow-right-solid.svg" alt="submit icon" />
+        <img src="http://lena4945.odns.fr/Assets/svg/arrow-right-solid.svg" alt="submit icon" />
       </button>
     </form>
   );

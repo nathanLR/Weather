@@ -14,8 +14,9 @@ function Weather(): ReactElement | null {
 
   const fetchWeatherData = async (filters: SubmitedValues): Promise<void> => {
     const weatherData = await fetchData(filters, "current");
-    console.log("Weather data :", weatherData);
-    setCurrentWeather(weatherData);
+    if (weatherData.cod === 200) {
+      setCurrentWeather(weatherData);
+    }
   };
 
   return (

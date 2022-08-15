@@ -18,7 +18,6 @@ function Forecast({ cityName }: Props): ReactElement | null {
   useEffect(() => {
     const fetchForecastData = async () => {
       const data = await fetchData({ cityName }, "forecast");
-      console.log("Forecast data : ", data);
       setForcast(data.list);
     };
     fetchForecastData();
@@ -30,7 +29,7 @@ function Forecast({ cityName }: Props): ReactElement | null {
 
   return (
     <OwlCarousel margin={10} items={4}>
-      {forecast.map((hourly) => <ForecastItem data={hourly} />)}
+      {forecast.map((hourly) => <ForecastItem data={hourly} key={hourly.dt} />)}
     </OwlCarousel>
   );
 }

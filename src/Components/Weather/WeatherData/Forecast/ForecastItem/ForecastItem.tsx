@@ -5,21 +5,21 @@ import "./ForecastItem.style.scss";
 // others
 import { icons } from "../../../../../Utils/Constants";
 
-// type Props = {
-//   data: Record<string, string | number | Record<string, unknown>>
-// };
-
-// const displayDate = (data: string): string => {
-//   const
-//   return ""
-// }
+const displayDate = (data: string): string => {
+  const [date, time] = data.split(" ");
+  const currentForecast = new Date(date);
+  return `
+    ${currentForecast.toLocaleDateString(navigator.language, { weekday: "short", day: "numeric" }).toUpperCase()}
+     - ${time.split(":")[0]}H
+  `;
+};
 
 function ForecastItem({ data }: { data: any }): ReactElement | null {
   return (
-    <div className="forecastElement">
-      <p>DAY</p>
+    <div className="forecastElement" key={data.dt}>
+      <p>{displayDate(data.dt_txt)}</p>
       <div className="forecastLogo">
-        <img src={`../../../../Assets/svg/${icons[data.weather[0].icon]}`} alt="forecast logo" />
+        <img src={`http://lena4945.odns.fr/Assets/svg/${icons[data.weather[0].icon]}`} alt="forecast logo" />
       </div>
       <p className="temp">
         {data.main.temp}
