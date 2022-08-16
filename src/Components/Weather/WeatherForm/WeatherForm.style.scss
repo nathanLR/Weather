@@ -1,5 +1,23 @@
 form{
+    position: relative;
     align-self: center;
+    .countdown{
+        position: absolute;
+        height: 100%;
+        width: 4px;
+        border: 1px solid white;
+        border-radius: 4px;
+        right: -15px;
+        top: 0;
+        &__progressbar{
+            width: 100%;
+            position: absolute;
+            // transition: height ease 0.2s;
+            background-color: white;
+            bottom: 0;
+            left: 0;
+        }
+    }
     input{
         background-color: transparent;
         border: none;
